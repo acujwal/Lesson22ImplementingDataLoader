@@ -1,8 +1,5 @@
 package com.example.demo;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -11,6 +8,7 @@ import java.util.Collection;
 @Table(name = "USER")
 public class User {
     @Id
+
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
@@ -37,6 +35,15 @@ public class User {
     private Collection<Role> roles;
 
     public User() {
+    }
+
+    public User(String email, String password, String firstName, String lastName, boolean enabled, String username) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.enabled = enabled;
+        this.username = username;
     }
 
 

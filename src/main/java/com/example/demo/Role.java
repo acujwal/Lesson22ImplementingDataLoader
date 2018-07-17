@@ -6,6 +6,13 @@ import java.util.Collection;
 @Entity
 public class Role {
 
+    public Role(String role) {
+        this.role = role;
+    }
+
+    public Role() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
